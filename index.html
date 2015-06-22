@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+
+	<body>
+
+		<div id="title"></div>
+
+		<p>
+			<img height="400" width="600" style="border:1px solid white" src="./test_images/image_1.jpg" id="mainImage"/>
+		</p>
+
+		<div id="myDiv" onclick="changeImage(event)">
+		<img class="imgStyle" src="./test_images/image_1.jpg"/>
+		<img class="imgStyle" src="./test_images/image_2.jpg"/>
+		<img class="imgStyle" src="./test_images/image_3.jpg"/>
+		<img class="imgStyle" src="./test_images/image_4.jpg"/>
+		<img class="imgStyle" src="./test_images/image_5.jpg"/>
+		<img class="imgStyle" src="./test_images/image_6.jpg"/>
+		</div>
+
+		<div id="details"></div>
+
+		<script type="text/javascript">
+			var images = document.getElmentById("myDiv").getElementsByTagName("img");
+
+			for (var i = 0; i < images.length; i++) {
+				images[i].onmouseover = function(){
+					this.style.cursor = 'hand';
+					this.style.borderColor = 'red';
+				}
+
+				images[i].onmouseout = function(){
+					this.style.cursor = 'pointer';
+					this.style.borderColor = 'gray';
+				}
+			}
+
+			function changeImage(event){
+				event = event || window.event;
+
+				var targetElement = event.target || event.srcElement;
+
+				if(targetElement.tagName == "IMG") {
+						document.getElementById("mainImage").src = targetElement.getAttribute("src");
+				}
+			}
+
+		</script>
+		<script src="main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+		body {
+			background-image: url("./test_images/image_2.jpg");
+   		background-color: #cccccc;
+			text-align: center;
+		}
+
+		.imgStyle
+		{
+			height: 100px;
+			width: 100px;
+			border: 1px solid white;
+		}
